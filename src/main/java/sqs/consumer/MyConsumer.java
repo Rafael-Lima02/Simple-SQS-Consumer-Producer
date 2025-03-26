@@ -13,6 +13,6 @@ public class MyConsumer {
     @SqsListener("my-queue")
     public void listen(String message) throws JsonProcessingException {
         MessageDTO messageDTO = mapper.readValue(message, MessageDTO.class);
-        System.out.println(messageDTO.content());
+        System.out.println("Message received: " + messageDTO.content());
     }
 }
